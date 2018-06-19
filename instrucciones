@@ -1,0 +1,11 @@
+si ya esta instalado react con sudo npm install -g create-react-app
+nomas corremos en el folder que queramos
+create-react-app <nombre>
+nos vamos al folder con cd <nombre que le diste>
+
+y ya corremos nuestro server con npm start
+
+pegar todo lo que necesitamos de bootstrap en index.html
+
+npm install axios --save
+axios es para hacer peticiones, requests.
