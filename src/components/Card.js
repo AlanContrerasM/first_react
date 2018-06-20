@@ -9,7 +9,7 @@ class Card extends Component{
     render(){
         return (
             <div className="col">
-            <div className="card" style={{width:"18rem"}}>
+            <div className="card" style={{width:"18rem", margin:"0 auto"}}>
             <img className="card-img-top" src="https://picsum.photos/420/320?random" alt="Card image cap"/>
             <div className="card-body">
                 <h5 className="card-title">{this.props.nombre}</h5>

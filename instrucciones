@@ -9,3 +9,10 @@ pegar todo lo que necesitamos de bootstrap en index.html
 
 npm install axios --save
 axios es para hacer peticiones, requests.
+
+
+en el back end instalamos cors, 
+
+y para agregar nuevas rutas o routes damos npm install react-router-dom --save
+
+y en app hacemos el import de la route
