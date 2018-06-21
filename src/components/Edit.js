@@ -1,13 +1,16 @@
 //name, price, stock, description
 import React, {Component} from 'react'
 import Navbar from './Navbar'
+import Card from './Card'
 import axios from 'axios'
 
-class Crear extends Component{
+class Edit extends Component{
 
     constructor(props){
         super(props);
         this.state = {
+            articulos:[],
+            uid:undefined,
             name:undefined,
             stock:undefined,
             price:undefined,
@@ -16,6 +19,30 @@ class Crear extends Component{
        //esto si no usas arrow function para bindear 
        //this.onInputChange = this.onInputChange.bind(this)
     }
+
+    componentDidMount(){
+        axios.get('https://papeleriabackend.herokuapp.com/api/v1/articulos')
+        .then(response =>{
+          this.setState({
+            articulos:response.data
+          })
+        })
+        .catch(err => console.log(err))
+        
+      }
+
+
+    updateArticulos(){
+        if(this.state.articulos.length == 0){
+          return <div>Loading...</div>
+        }else{
+          let articulo = this.state.articulos.map(element =>{
+            return <Card nombre = {"Articulo: "+element.name} telefono = {"Precio: $"+element.price}/>
+          })
+          return articulo
+        }
+      }
+
 
     onInputChange=(e)=>{
         // console.log("Ejecute el onInputChange")
@@ -75,8 +102,13 @@ class Crear extends Component{
     render(){
         console.log(this.state)
         return (
-            <div className="Crear">
+
+            <div className="Edit">
             <Navbar/>
+            <div className="container">
+            <h1>Elige Articulo por editar:</h1>
+            <div className="row">{this.updateArticulos()}</div>
+            </div>
             <div className="container col-4">
             <form onSubmit={this.onSubmit}>
                 <div className="form-group">
@@ -116,4 +148,4 @@ class Crear extends Component{
     }
 }
 
-export default Crear
+export default Edit

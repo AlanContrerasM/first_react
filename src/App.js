@@ -4,6 +4,7 @@ import Navbar from './components/Navbar'
 import Card from './components/Card'
 import Saludo from './components/Saludo'
 import Crear from './components/Crear'
+import Edit from './components/Edit'
 import './App.css';
 import axios from 'axios'
 import {BrowserRouter, Route} from 'react-router-dom'
@@ -150,6 +151,7 @@ class App extends Component {
       <main>
         <Route exact path="/" component={Navbar}/>
         <Route exact path="/login" component={Crear}/>
+        <Route exact path="/edit" component={Edit}/>
 
       </main>
       

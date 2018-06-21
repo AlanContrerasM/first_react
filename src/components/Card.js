@@ -14,7 +14,7 @@ class Card extends Component{
             <div className="card-body">
                 <h5 className="card-title">{this.props.nombre}</h5>
                 <p className="card-text">{this.props.telefono}</p>
-                <a href="#" className="btn btn-primary">Go somewhere</a>
+                <a href="#" className="btn btn-primary">Editar</a>
             </div>
             </div>
             </div>
